@@ -1,0 +1,10 @@
+# Download SRA's from NCBI 
+## The dataset used in this project is short-read Illumina RNAseq data from the preprint Brasseur et al. (2025). 
+
+First, a text file was created where all the SRR# were then listed in. 
+`nano poutssrdata.txt` 
+
+Next, an script was written to download all the SRA's from NCBI into a HB folder
+
+(IN PROGESS)
+
