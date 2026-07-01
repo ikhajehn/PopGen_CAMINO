@@ -1,5 +1,5 @@
 # CAMINO-Scripts
-Scripts used for population genetics analysis project - 2026
+Population Genetics of Polar Fish - 2026
 
 # downloadfastq.sh
 Script used to download 24 SRA's from NCBI and convert them into .fastq files usign fasterq-dump
