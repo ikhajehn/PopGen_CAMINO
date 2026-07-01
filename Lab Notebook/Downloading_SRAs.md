@@ -1,0 +1,55 @@
+# Downloading SRA's From NCBI: Set Up
+## Create a List of SRR's in HB
+In order to download SRA's from NCBI, the appropriate SRR files must be located. Some papers will have a "Data Availability" section where they will provide this information. On NCBI, look up the library and download the Ascension List. Upload the Ascension list onto HB. 
+
+Copy and paste the numbers into a text file
+```
+nano srrdata.txt    # my data set had 24 SRA files
+SRR...37
+SRR...38
+SRR...39
+|
+|
+SRR...60
+```
+# Downloading SRA's From NCBI: Individually
+Once the list is created, a script can be written to initiate the downloading process. You can download SRA files individually without a script using the following:
+```
+fastq-dump --skip technical --readids --read-filter pass --dumpbase --split-3 --clip SRR32484237/SRR32484237.sra
+```
+This method uses fastq-dump; however, I used fasterq-dump in my script, as it is faster and allows me to skip some flags, such as "```skip technical```" "```read filter```" and "```split-3```" etc. 
+
+# Downloading SRA's From NCBI: Using an Array
+An array allows mutiple tasks to run in parallel with each other and is the only feasible way to download many SRA's from NCBI
+```
+nano downloadfastq.sh
+
+#!/bin/bash
+|
+|
+|
+#SBATCH --array=1-24                            # Since there are 24 files, the array goes from 1 to 24
+#SBATCH --output=sra_download_out/_%A_%a.out
+#SBATCH --error=sra_download_err/_%A_%a.err     
+```
+Note that originally when this script was written, I made out and error folders prior to sending the job. You can make these folders the way I did, or include the command in the script to have the folders, with out and error files, created on completion of the job. 
+```
+mkdir -p sra_download_out sra_download_err
+```
+A conda environment must be created to use ```prefetch``` and ```fasterq-dump``` commands. In the script, make sure you activate a conda environment as a first step, and load any necessary software. 
+```
+module load miniconda3
+conda activate camino26
+```
+Next, I define a variable ```SRA```, which will store the files we wish to extract. This ensures that each ```.fastq``` file will be titled with its corresponding SRR number.  
+```
+SRA=$(sed -n "${SLURM_ARRAY_TASK_ID}p" poutssrdata.txt)
+```
+Then, I used prefetch to pull files from NCBI based on the SRA's stored
+```
+prefetch "{$SRA}"
+```
+Lastly, I downloaded the reads using ```fasterq-dump```
+```
+fasterq-dump "{$SRA}"
+```
