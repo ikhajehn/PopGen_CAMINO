@@ -59,12 +59,12 @@ fasterq-dump "{$SRA}"
 ```
 # Miscellaneous Notes 
 ## Memory
--Allotted Memory: 10GB
--Memory Utilizied: 606.95 MB 
+- Allotted Memory: 10GB
+- Memory Utilizied: 606.95 MB 
 
 ## Time 
--Allotted Time: 03:00:00
--Job Completion Time: 00:19:11
+- Allotted Time: 03:00:00
+- Job Completion Time: 00:19:11
 
 ## Note for the Future
-This was my first ever successful job submitted with limited guidance. On future scripts, I direct a path to my ```pout``` folder as opposed to ```scratch``` because it will backed up and organized. Having it output into my main directory also removes the need for moving files over between directories. 
+This was my first ever successful job submitted with limited guidance. On future scripts, I direct a path to my ```pout``` folder as opposed to ```scratch```. If I were to rewrite this script, I would make that change. Having it output into my main directory would have removed the need to move files over between directories. Also, ```scratch``` is purged periodically, making it insuitable to store files long-term. 
