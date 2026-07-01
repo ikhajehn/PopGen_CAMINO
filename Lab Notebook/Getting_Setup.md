@@ -18,6 +18,7 @@ module load star
 
 # Installing Software Packages 
 
+Note that these softwares may already be present on HPC, but it is useful to know how to install softwares using Anaconda and/or Homebrew 
 ```
 conda install -c bioconda:sra_tools   # download SRA-toolkit
 brew install git    # download git
