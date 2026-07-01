@@ -26,9 +26,9 @@
 
 ```### Uploading to GitHub
 ``` mv [file name] ~/pout/CAMINO-Scripts/    # Remember that the file must be in the local repository```
-```cd ~/pout/CAMINO-Scripts/    
-```git pull    # Make sure the local and remote repositories are up-to-date
-```git add [file name]
-```git commit -m "Title"
+```cd ~/pout/CAMINO-Scripts/``` 
+```git pull    # Make sure the local and remote repositories are up-to-date```
+```git add [file name]```
+```git commit -m "Title"```
 ```git push```
 ## Referesh GitHub
