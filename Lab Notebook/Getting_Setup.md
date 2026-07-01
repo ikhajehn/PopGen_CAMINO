@@ -8,12 +8,14 @@ cd ~/pout
 
 # Important Modules to Know
 ```
-module load miniconda3                # to load SRA-Toolkit (which will include fasterq-dump, multiqc, and more)
-  conda activate [environment name]   # create and/or activate a conda environment
+module load miniconda3                  # to load SRA-Toolkit (which will include fasterq-dump, multiqc, and more)
 module load fastqc
 module load multiqc
 module load git
 module load star
+
+conda activate [conda environment name] # command to create and activate an environment of a given name
+conda deactivate                        # turns off the conda environment 
 ```
 
 # Installing Software Packages 
