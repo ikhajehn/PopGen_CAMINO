@@ -1,6 +1,2 @@
 # PopGen_CAMINO 
-Laboratory notebook and scripts for population genetics project for CAMINO 2026
-
-Species: *Zoarces viviparus* 
-
-Populations: North Sea and Baltic Sea 
+This repository contains laboratory notebook entries and scripts written for a population genetics analysis of *Zoarces viviparus* populations in the North and Baltic Sea. This study will assess spatial and temporal genetic diversity and population structure of *Zoarces viviparus* to lay the groundwork for making meaning predictions for a closely-related eelpout species on the Northwestern Atlantic, *Zoarces americanus*.
