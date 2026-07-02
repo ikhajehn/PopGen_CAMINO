@@ -23,6 +23,16 @@ fastq-dump --skip technical --readids --read-filter pass --dumpbase --split-3 --
 ```
 This method uses fastq-dump; however, I used fasterq-dump in my script, as it is faster and allows me to skip some flags, such as "```skip technical```" "```read filter```" and "```split-3```" etc. 
 
+## Flags
+Flags are options to give commands to perform tasks in a specific way. 
+- ```--skip-technical``` only read biological reads (skip barcodes and primers)
+- ```--readids``` appends .1 and .2 to the sequence ID's (default will give both reads the same ID)
+- ```--read-filter pass``` filter out poor-quality reads or reads with uncalled bases (N)
+- ```--dumpbase``` directs extracted bases to be in A, T, C, G, and N format (default would be colored)
+- ```--split-3``` splits paired-end reads into two separate files (*_1.fastq and *_2.fastq) and unpaired or unmatched reads in a third file
+- ```--clip``` removes tags that were used during amplification
+- ```--outdir``` defines a folder to store FastQ files in
+
 # Downloading SRA's From NCBI: Using an Array
 An array allows mutiple tasks to run in parallel with each other and is the only feasible way to download many SRA's from NCBI
 ```
