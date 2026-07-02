@@ -32,6 +32,7 @@ Flags are options to give commands to perform tasks in a specific way.
 - ```--split-3``` splits paired-end reads into two separate files (*_1.fastq and *_2.fastq) and unpaired or unmatched reads in a third file
 - ```--clip``` removes tags that were used during amplification
 - ```--outdir``` defines a folder to store FastQ files in
+
 [Fastq-dump flags](https://rnnh.github.io/bioinfo-notebook/docs/fastq-dump.html)
 
 # Downloading SRA's From NCBI: Using an Array
