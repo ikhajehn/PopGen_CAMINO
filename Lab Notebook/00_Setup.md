@@ -3,7 +3,7 @@
 Logging onto HB using terminal
 ```
 ssh ikhajehn@hb.ucsc.edu
-cd ~/pout
+cd pout
 ``` 
 
 # Important Modules to Know
