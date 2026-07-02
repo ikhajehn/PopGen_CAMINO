@@ -13,6 +13,7 @@ SRR...39
 SRR...60
 ```
 Link to Data Set: [PRJNA1068064] (https://www.ncbi.nlm.nih.gov/sra?term=PRJNA1068064&cmd=DetailsSearch)
+
 # Downloading SRA's From NCBI: Individually
 Once the list is created, a script can be written to initiate the downloading process. You can download SRA files individually without a script using the following:
 ```
