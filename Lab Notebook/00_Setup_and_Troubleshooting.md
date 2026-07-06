@@ -54,3 +54,12 @@ git commit -m "Title"
 git push
 ```
 Referesh GitHub 
+
+# Troubleshooting: Installing New Version of Multiqc
+```
+conda create -n multiqc=1.35        # create a new environment 
+conda activate multiqc=1.35         # activate the new environment
+conda install bioconda::multiqc     # download multiqc into the environemnt
+```
+Notes: I did not need to load miniconda3, nor should I have loaded a pre-existing conda environment prior. 
+
