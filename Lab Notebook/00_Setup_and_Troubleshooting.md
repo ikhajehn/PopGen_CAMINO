@@ -55,7 +55,8 @@ git push
 ```
 Referesh GitHub 
 
-# Troubleshooting: Installing New Version of Multiqc
+# Troubleshooting Section
+## Installing New Version of Multiqc 
 ```
 conda create -n multiqc=1.35        # create a new environment 
 conda activate multiqc=1.35         # activate the new environment
