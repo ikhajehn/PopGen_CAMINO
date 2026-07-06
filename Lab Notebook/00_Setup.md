@@ -23,6 +23,7 @@ conda deactivate                        # turns off the conda environment
 Note that these softwares may already be present on HPC, but it is useful to know how to install softwares using Anaconda and/or Homebrew 
 ```
 conda install -c bioconda:sra_tools   # download SRA-toolkit
+conda install bioconda::multiqc       # download multiqc
 brew install git                      # download git
 ```
 
