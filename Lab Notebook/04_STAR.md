@@ -40,10 +40,10 @@ STAR Aligner results in many output files, but what do they all mean? The follow
 
 ## Tab Out Folder
 SJ.out.tab contains high confidence collapsed splice junctions in tab-delimited format. Note that STAR defines the junction start/end as intronic bases, while many other software define them as exonic bases. The columns have the following meaning:
-- column 1: chromosome 
+- column 1: what chromosome the intron is on
 - column 2: first base of the intron (1-based)
 - column 3: last base of the intron (1-based)
-- column 4: strand (0: undefined, 1: +, 2: -)
+- column 4: which DNA strand (Undefinined, 0, Forward, 1: +, Reverse, 2: -)
 - column 5: intron motif: 0: non-canonical; 1: GT/AG, 2: CT/AC, 3: GC/AG, 4: CT/GC, 5: AT/AC, 6: GT/AT
 - column 6: 0: unannotated, 1: annotated in the splice junctions database. Note that in 2-pass mode, junctions detected in the 1st pass are reported as annotated, in addition to annotated junctions from GTF.
 - column 7: number of uniquely mapping reads crossing the junction
