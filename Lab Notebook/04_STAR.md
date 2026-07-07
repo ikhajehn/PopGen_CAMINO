@@ -19,8 +19,21 @@ In Progress
 
 
 # Interpretation of STAR Outputs
+## Types of Output Files 
 STAR Aligner results in many output files, but what do they all mean? The following definitions are taken directly from the manual for reference purposes
 
 - Log.out: main log file with a lot of detailed information about the run. This file is most useful for troubleshooting and debugging.
 - Log.progress.out: reports job progress statistics, such as the number of processed reads, % of mapped reads etc. It is updated in 1 minute intervals.
 - Log.final.out: summary mapping statistics after mapping job is complete, very useful for quality control. The statistics are calculated for each read (single- or paired-end) and then summed or averaged over all reads. Note that STAR counts a paired-end read as one read, (unlike the samtools flagstat/idxstats, which count each mate separately). Most of the information is collected about the UNIQUE mappers (unlike samtools flagstat/idxstats which does not separate unique or multi-mappers). Each splicing is counted in the numbers of splices, which would correspond to summing the counts in SJ.out.tab. The mismatch/indel error rates are calculated on a per base basis, i.e. as total number of mismatches/indels in all unique mappers divided by the total number of mapped bases.
+
+## Log Progress Out Report 
+- Speed M/hr:	Processing speed (reads per million per hour) 
+- Read number:	Total reads processed so far 
+- Read length: your read length
+- Mapped unique: reads that mapped to one location (>80% is good)
+- Mapped length: average length of mapped reads
+- Mapped MMrate: mapped mismatch rate (<3%)
+- Mapped multi: reads mapping to multiple locations
+- Unmapped multi: discarded reads mapping to multiple locations (too ambiguous)
+- Unmapped short: reads too short to map
+- Unmapped other: other unmapped reads
