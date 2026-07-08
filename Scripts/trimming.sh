@@ -21,25 +21,26 @@ conda activate camino26
 module load trimgalore 
 module load fastqc/0.12.1
 
-# Configuration
+# Read the SRA ID for this array 
 sra_path=/home/ikhajehn/pout/poutssrdata.txt
 
 R1=$(sed -n "${SLURM_ARRAY_TASK_ID}p" r1_list.txt)
 R2=$(sed -n "${SLURM_ARRAY_TASK_ID}p" r2_list.txt)
 
-# Make output directory
-
+# Make output directories
 mkdir -p ../fastqc_results2
 mkdir -p ../trim_results
 
 # Trim Sequences
-
-trim_galore --cores 2 --paired -q 20 --stringency 5 --length 50 --o ../trim_results \
-	    --fastqc --fastqc_args "--nogroup --outdir ../fastqc_results2" "$R1" "$R2" 
+trim_galore --cores 2 \  
+			--paired -q 20 \          # paired-end reads; discard reads with quality scores below 20                
+			--stringency 5 \          # adapter sequence needs to match only 5bp to be trimmed
+			--length 50 \             # discard reads shorter than 50bp
+			--o ../trim_results \     # outdir ../trim_results
+	        --fastqc --fastqc_args "--nogroup --outdir ../fastqc_results2" "$R1" "$R2" 
 
 
 # Unload trimgalore and deactivate conda environment 
-
 module unload trimgalore
 conda deactivate 
 
