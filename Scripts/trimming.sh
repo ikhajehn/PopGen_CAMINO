@@ -13,16 +13,15 @@
 #SBATCH --no-requeue
 
 # Set path to where the files are stored
-
 cd /home/ikhajehn/pout/fastq_24
 
 # Load conda environment and trim-galore 
-
 module load miniconda3
 conda activate camino26
 module load trimgalore 
 module load fastqc/0.12.1
 
+# Configuration
 sra_path=/home/ikhajehn/pout/poutssrdata.txt
 
 R1=$(sed -n "${SLURM_ARRAY_TASK_ID}p" r1_list.txt)
