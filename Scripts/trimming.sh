@@ -37,7 +37,7 @@ trim_galore --cores 2 \
 			--stringency 5 \          # adapter sequence needs to match only 5bp to be trimmed
 			--length 50 \             # discard reads shorter than 50bp
 			--o ../trim_results \     # outdir ../trim_results
-	        --fastqc --fastqc_args "--nogroup --outdir ../fastqc_results2" "$R1" "$R2" 
+	        --fastqc --fastqc_args "--nogroup --outdir ../fastqc_results2" "$R1" "$R2"   # Run FastQC on trimmed files 
 
 
 # Unload trimgalore and deactivate conda environment 
